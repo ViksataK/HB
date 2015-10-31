@@ -1,0 +1,77 @@
+
+public class HelloWorld {
+
+    public static void main(String args[]) {
+	char[][] a = { { 'i', 's', 'a', 'n' }, { 'v', 's', 'a', 'a' }, { 'a', 'v', 'a', 's' }, { 'n', 'a', 's', 'i' } };
+	String word = "ivan";
+	int n = 0;
+	for (int i = 0; i < a.length - word.length() + 1; i++) { // fromnorth
+	    for (int j = 0; j < a[i].length; j++) {
+		if (a[i][j] == word.charAt(0) && a[i + 1][j] == word.charAt(1) && a[i + 2][j] == word.charAt(2)
+			&& a[i + 3][j] == word.charAt(3)) {
+		    n++;
+		}
+	    }
+	}
+
+	for (int i = 3; i > 2; i--) { // fromsouth
+	    for (int j = 0; j < 4; j++) {
+		if (a[i][j] == word.charAt(0) && a[i - 1][j] == word.charAt(1) && a[i - 2][j] == word.charAt(2)
+			&& a[i - 3][j] == word.charAt(3)) {
+		    n++;
+		}
+	    }
+	}
+	for (int i = 0; i < a.length; i++) { // fromeast
+	    for (int j = 0; j < 1; j++) {
+		if (a[i][j] == word.charAt(0) && a[i][j + 1] == word.charAt(1) && a[i][j + 2] == word.charAt(2)
+			&& a[i][j + 3] == word.charAt(3)) {
+		    n++;
+		}
+	    }
+	}
+	for (int i = 0; i < a.length; i++) { // fromwest
+	    for (int j = 3; j > 2; j--) {
+		if (a[i][3] == word.charAt(0) && a[i][2] == word.charAt(1) && a[i][1] == word.charAt(2)
+			&& a[i][0] == word.charAt(3)) {
+		    n++;
+		}
+	    }
+	}
+	for (int i = 0; i < 1; i++) { // fromnorthdiOt00
+	    for (int j = 0; j < 1; j++) {
+		if (a[i][j] == word.charAt(0) && a[i + 1][j + 1] == word.charAt(1) && a[i + 2][j + 2] == word.charAt(2)
+			&& a[i + 3][j + 3] == word.charAt(3)) {
+		    n++;
+		}
+	    }
+	}
+	for (int i = 3; i < 4; i++) { // fromsouthdiOt33
+	    for (int j = 3; j < 4; j++) {
+		if (a[i][j] == word.charAt(0) && a[i - 1][j - 1] == word.charAt(1) && a[i - 2][j - 2] == word.charAt(2)
+			&& a[i - 3][j - 3] == word.charAt(3)) {
+		    n++;
+		}
+	    }
+	}
+	for (int i = 0; i < 1; i++) { // fromnorthdiOt03
+	    for (int j = 3; j < 4; j++) {
+		if (a[i][j] == word.charAt(0) && a[i + 1][j - 1] == word.charAt(1) && a[i + 2][j - 2] == word.charAt(2)
+			&& a[i + 3][j - 3] == word.charAt(3)) {
+		    n++;
+		}
+	    }
+	}
+	for (int i = 3; i < 4; i++) { // fromsouthdiOt30
+	    for (int j = 0; j < 1; j++) {
+		if (a[i][j] == word.charAt(0) && a[i - 1][j + 1] == word.charAt(1) && a[i - 2][j + 2] == word.charAt(2)
+			&& a[i - 3][j + 3] == word.charAt(3)) {
+		    n++;
+		}
+	    }
+	}
+	System.out.println(n);
+
+    }
+
+}
