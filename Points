@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class HelloWorld {
+	public static void main(String args[])
+	{
+		Scanner scan=new Scanner(System.in);
+		int x=0;
+		int y=0;
+		boolean warp=false;
+		String input=new String();
+		input=scan.nextLine();
+		for(int i=0;i<input.length();i++){
+			String a=Character.toString(input.charAt(i));
+			if(a.equals("~")){
+				warp=!warp;
+			}
+			if(warp==true){
+				if(a.equals("^")){
+					y++;
+				}
+				if(a.equals("<")){
+					x++;
+				}
+				if(a.equals("v")){
+					y--;
+				}
+				if(a.equals(">")){
+					x--;
+				}
+			}
+			else{
+				if(a.equals("v")){
+					y++;
+				}
+				if(a.equals(">")){
+					x++;
+				}
+				if(a.equals("^")){
+					y--;
+				}
+				if(a.equals("<")){
+					x--;
+				}
+			}
+			
+		}
+		System.out.println(x+"/"+y);
+		
+	}
+}
